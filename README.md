@@ -978,131 +978,131 @@ transform-style:preserve-3d;/*保持3D变形*/
 ### 38.canvas画布
 
 ~~~ js
-1.画布的基本使用
-    1.html中创建canvas标签(画纸)
+画布的基本使用
+1.html中创建canvas标签(画纸)
 
-​    2.填空题：获取绘制的上下文对象
-​		var ctx = document.querySelector('canvas').getContext('2d')
+2.填空题：获取绘制的上下文对象
+	var ctx = document.querySelector('canvas').getContext('2d')
 ​        
-​    3.设置画笔的样式
-​      1.设置画笔的颜色
-​      	ctx.strokeStyle = 'red';
-​        ctx.fillStyle = 'pink';
+3.设置画笔的样式
+	1.设置画笔的颜色
+		ctx.strokeStyle = 'red';
+​       ctx.fillStyle = 'pink';
 
-​      2.画笔的粗细
-​        ctx.lineWidth = 5;
+​   2.画笔的粗细
+​       ctx.lineWidth = 5;
 
-​    4.绘制
+4.绘制
 ​    
-​      1.矩形
-​            ctx.strokeRect(x,y,width,height) 描边或者线框矩形
-​            ctx.fillRect(x,y,width,height)   填充矩形
-​        	考点：在canvas内每1s绘制一个 大小随机 颜色随机 位置随机的矩形
+​   1.矩形
+​       ctx.strokeRect(x,y,width,height) 描边或者线框矩形
+​       ctx.fillRect(x,y,width,height)   填充矩形
+​       考点：在canvas内每1s绘制一个 大小随机 颜色随机 位置随机的矩形
 
-​       2.圆形
-​            ctx.arc(x,y,r,0,Math.PI*2,false)
-​            ctx.stroke()
-​            ctx.fill()
-​            考点：在canvas内每1s绘制一个 大小随机 颜色随机 位置随机的圆
+​    2.圆形
+​       ctx.arc(x,y,r,0,Math.PI*2,false)
+​       ctx.stroke()
+​       ctx.fill()
+​       考点：在canvas内每1s绘制一个 大小随机 颜色随机 位置随机的圆
 
-​        3.画线
-​            ctx.moveTo(x,y)
-​            ctx.lineTo(x1,y1)
-​            ctx.stroke()
-​            考点:填空题  自动闭合路径  
-​            ctx.closePath()
+​    3.画线
+		ctx.moveTo(x,y)
+		ctx.lineTo(x1,y1)
+​       ctx.stroke()
+​       考点:填空题  自动闭合路径  
+​       ctx.closePath()
 
-​            考点: 填空的 在绘制第二个图形的时候 第一个图形会被覆盖重新绘制一次为什么？
+​       考点: 填空的 在绘制第二个图形的时候 第一个图形会被覆盖重新绘制一次为什么？
 ​            (两个图形共用同一个路径) 怎么解决(使用ctx.beginPath()重新开辟新的路径)
 
-​         4.绘制文字
-​            1.设置文字颜色
-​                ctx.strokeStyle = 'red'
-​                ctx.fillStyle = 'yellow'
+​	4.绘制文字
+		1.设置文字颜色
+			ctx.strokeStyle = 'red'
+​           ctx.fillStyle = 'yellow'
 
-​            2.设置文字font属性
-​            	ctx.font = 'style weight size family'
+​       2.设置文字font属性
+​           ctx.font = 'style weight size family'
 
-​            3.文字的对齐方式
-​                水平
-​                	ctx.textAlign = 'left/center/right'
+​       3.文字的对齐方式
+​           水平
+​           ctx.textAlign = 'left/center/right'
 
-​                垂直
-​                    ctx.textBaseline = 'bottom/middle/top'
+​           垂直
+​           ctx.textBaseline = 'bottom/middle/top'
 
-​			4.绘制
-​            	ctx.strokeText('文字内容',x,y)
-​                ctx.fillText('文字内容',x,y)
+​		4.绘制
+​            ctx.strokeText('文字内容',x,y)
+​            ctx.fillText('文字内容',x,y)
 
-​		5.绘制渐变
-​            1.线性渐变
-​            	1.创建线性渐变  (两个点决定了渐变的方向)
-​            		var linear =  ctx.createLinearGradient(startX,startY,endX,endY)
+​	5.绘制渐变
+​       1.线性渐变
+​            1.创建线性渐变  (两个点决定了渐变的方向)
+​            	var linear =  ctx.createLinearGradient(startX,startY,endX,endY)
 
-​                2.在该线性渐变上添加渐变颜色
-​                    linear.addColorStop(0,"red")
-​                    linear.addColorStop(0.5,"yellow")
-​                    linear.addColorStop(1,"bule")
+​            2.在该线性渐变上添加渐变颜色
+​                 linear.addColorStop(0,"red")
+​                 linear.addColorStop(0.5,"yellow")
+​                 linear.addColorStop(1,"bule")
 
-​                 3.应用到描边或者是填充样式上
-​                     ctx.fillStyle = linear
+​            3.应用到描边或者是填充样式上
+​                 ctx.fillStyle = linear
 
-​                 4.绘制图形          
-​                 	ctx.fillRect(0,0,600,600)
-​                 	ctx.strokeRect(0,0,600,600)
+​             4.绘制图形          
+​                 ctx.fillRect(0,0,600,600)
+​                 ctx.strokeRect(0,0,600,600)
 
-​          	2.径向渐变
-​                 1.创建径向渐变
-​                    var radial = ctx.createRadialGradient(x,y,r1,x,y,r2)
+​         2.径向渐变
+​             1.创建径向渐变
+​                 var radial = ctx.createRadialGradient(x,y,r1,x,y,r2)
 ​                        
-​                 2.在该渐变方向上添加渐变颜色
-​                    radial.addColorStop(0,"red")
-​                    radial.addColorStop(0.5,"yellow")
-​                    radial.addColorStop(1,"bule")
+​             2.在该渐变方向上添加渐变颜色
+​                 radial.addColorStop(0,"red")
+​                 radial.addColorStop(0.5,"yellow")
+​                 radial.addColorStop(1,"bule")
 
-​                  3.应用到描边或者是填充样式上
-​                     ctx.fillStyle = radial
+​              3.应用到描边或者是填充样式上
+​                 ctx.fillStyle = radial
 
-​                  4.绘制
-​					ctx.fillRect(0,0,600,600)
-​        			ctx.fillRect(0,0,600,600)
+​              4.绘制
+​				  ctx.fillRect(0,0,600,600)
+​        		  ctx.fillRect(0,0,600,600)
 
-​          6.绘制图片(了解)
-​                js创建img节点对象
-​                img.src = ''
-​                img.onload = function(){
-​                    ctx.drawImage()
-​                }
+	6.绘制图片(了解)
+		js创建img节点对象
+​       img.src = ''
+​       img.onload = function(){
+​       	ctx.drawImage()
+​       }
 
-​           7.把绘制的图形保存为图片并回显到浏览器的方法
-​               1.获取到画布 canvas节点对象
-​               2.把画布转为base64格式的图片路径 
-​               3.创建img标签 img.src = 把画布转为base64格式的图片路径 
-​               4.当img加载完毕之后 把img插入到body中
-​               /*
-​                   考点：当把图形转为image/jpeg格式的时候如果没有填充色 
-​                   默认会添加一个黑色的填充色 解决办法：
+	7.把绘制的图形保存为图片并回显到浏览器的方法
+​       1.获取到画布 canvas节点对象
+​       2.把画布转为base64格式的图片路径 
+​       3.创建img标签 img.src = 把画布转为base64格式的图片路径 
+​       4.当img加载完毕之后 把img插入到body中
+​       /*
+​       	考点：当把图形转为image/jpeg格式的时候如果没有填充色 
+​       	默认会添加一个黑色的填充色 解决办法：
 ​                   
-​                   使用绘制矩形的api绘制一个具有填充色的矩形
-​               */
+​       	使用绘制矩形的api绘制一个具有填充色的矩形
+​       */
 
-​           8.画笔的平移 旋转  缩放 
-​                 ctx.translate(x,y)****绘制坐标轴
-​                 ctx.rotate()
-​                 ctx.scale()
+	8.画笔的平移 旋转  缩放 
+		ctx.translate(x,y)****绘制坐标轴
+​       ctx.rotate()
+​       ctx.scale()
 
-​            9.多图形组合
+	9.多图形组合
 ​            
-​                1.后画覆盖先画
-​                    ctx.globalCompositeOperation = 'source-over'//默认值
+		1.后画覆盖先画
+			ctx.globalCompositeOperation = 'source-over'//默认值
 
-​                2.后画清空先画(用在橡皮擦) (清空的形状 根据自己定义)
-​                    ctx.globalCompositeOperation = 'destination-out'
+​       2.后画清空先画(用在橡皮擦) (清空的形状 根据自己定义)
+​           ctx.globalCompositeOperation = 'destination-out'
 
-​            10.清空绘制的区域
+	10.清空绘制的区域
 ​            
-​                 清空矩形区域内的绘制内容(以矩形的形式来清空绘制的内容)
-​                    ctx.clearRect(x,y,width,height)
+		清空矩形区域内的绘制内容(以矩形的形式来清空绘制的内容)
+			ctx.clearRect(x,y,width,height)
 
 ~~~
 
