@@ -44,15 +44,18 @@ DPR = 物理像素 / 逻辑像素
 ### 5.移动端视口分类
 
 ~~~ text
-1. 布局视口：用于存放我们页面的一个视口；早期移动端技术没有发展的时候为了让PC端的页面显示在移动端所以存在一个布局视口；布局视口的宽度用`document.documentElement.clientWidth `来获取 
+1. 布局视口：
+	用于存放我们页面的一个视口,
+	早期移动端技术没有发展的时候为了让PC端的页面显示在移动端所以存在一个布局视口；布局视口的宽度用			document.documentElement.clientWidth来获取 
 
    
-
 2. 视觉视口：眼睛能够看到的部分是视觉视口；视觉视口的面积就是手机设备的面积 
 
    
 
-3. 理想视口：理想视口（又叫做完美视口）是一个概念指的是当布局视口的大小正好等于视觉视 口的宽度,这样写的页面才完美无瑕,这样的一种视口称为理想视口 
+3. 理想视口：理想视口（又叫做完美视口）
+	是一个概念指的是当布局视口的大小正好等于视觉视口的宽度
+	这样写的页面才完美无瑕,这样的一种视口称为理想视口 
 ~~~
 
 
@@ -92,6 +95,7 @@ margin border padding content
 
 2. box-sizing:border-box;表示的是社会组的盒子的width值从元素的边框部分算起 也就是怪异盒模 型  
 
+
 ```
 
 ### 10.屏幕分类
@@ -104,6 +108,7 @@ margin border padding content
 3.中屏： 屏幕的物理像素大于992px小于1200px的  平板电脑
 
 4.大屏:  屏幕的物理像素大于1200px的  PC屏幕
+
 ```
 
 ### 11.布局单位
@@ -120,6 +125,7 @@ margin border padding content
 5.vw:以屏幕的宽度为参考
 
 6.vh：以屏幕的高度为参考
+
 ~~~
 
 ### 12. 移动端常见的四种布局方式及特点 
@@ -137,12 +143,14 @@ margin border padding content
 4.flex布局的特点：采用关键字取值
 	缺点:float布局就会失效,依赖display属性,如果想要实现元素的显示隐藏那关display属性已被占用
 
+
 ```
 
 ### 13.响应式布局语法
 
 ~~~ css
 @media screen and (min-width){}
+
 ~~~
 
 ### 14.动态设置html字体的方法
@@ -153,6 +161,7 @@ margin border padding content
 html{
 	font-size:calc(100vw * 100 / 设计图的宽)
 }
+
 ~~~
 
 ~~~ css
@@ -161,16 +170,19 @@ html{
 document.documentElement.style.fontSize = 
 document.documentElement.clientWidth * 100 / 设计图的宽度 + 'px'
 
+
 ~~~
 
 ~~~ css
 3.flexible.js插件：该插件的原理是把屏幕的宽度分为10份之后的结果赋值给html的fontSize
+
 ~~~
 
 ### 15.如何把元素设置为弹性容器
 
 ~~~ css
 为元素添加 display:flex属性
+
 ~~~
 
 ### 16.弹性容器上的6个属性
@@ -194,6 +206,7 @@ align-items:flex-start|center|flex-end|stretch|baseline
 6.设置多行项目在交叉轴上的对齐方式
 align-content:flex-start||center||flex-end||strech||space-between||spacearound||space-evenly
 
+
 ~~~
 
 ### 17.项目上的6个属性
@@ -211,6 +224,7 @@ align-content:flex-start||center||flex-end||strech||space-between||spacearound||
 5.flex:;是flex-grow flex-shrink和flex-basis的复合写法
 
 6.align-self：；单独设置某个项目在交叉轴上的对齐方式
+
 
 ~~~
 
@@ -234,6 +248,7 @@ align-content:flex-start||center||flex-end||strech||space-between||spacearound||
     }
 
 2.使用flex布局实现上中下的固比固结构
+
 
 ~~~
 
@@ -289,6 +304,7 @@ align-content:flex-start||center||flex-end||strech||space-between||spacearound||
 
     /*为什么叫做伪元素：看起来和普通元素一样可以设置内容和样式,但是不是真正的dom元素,也
     就是说不能使用js来获取这个伪元素,该元素的内容也不能被选中,只能用来显示*/
+
 ~~~
 
 ### 20.css3新增的颜色取值
@@ -297,6 +313,7 @@ align-content:flex-start||center||flex-end||strech||space-between||spacearound||
 1.color:rgba() 
 
 2.color:transparent
+
 
 ~~~
 
@@ -311,6 +328,7 @@ align-content:flex-start||center||flex-end||strech||space-between||spacearound||
 
 2.浏览器私有前缀的作用
 	让浏览器更好的识别css3新增的属性
+
 ~~~
 
 ### 22.css3新增的文字属性
@@ -350,6 +368,7 @@ align-content:flex-start||center||flex-end||strech||space-between||spacearound||
         /*超出部分隐藏*/
         overflow:hidden;//超出3行的部分省隐藏
     }
+
 ~~~
 
 ### 23.css新增的元素属性
@@ -411,6 +430,7 @@ align-content:flex-start||center||flex-end||strech||space-between||spacearound||
     background-color:yellow;
 
     2. background:image repeate position/size,image1 repeate position/size
+
 ~~~
 
 ### 24.css3变形
@@ -441,6 +461,7 @@ align-content:flex-start||center||flex-end||strech||space-between||spacearound||
     transform:skew(30deg,60deg)/*第一个参数代表的是水平方向上的倾斜,第二个参数代表的是垂
     直方向上的倾斜*/
     transform:skew(30deg)/*当只写一个参数的时候,代表第二个参数的度数是0deg*/
+
 ~~~
 
 ### 25.变形原点
@@ -460,6 +481,7 @@ align-content:flex-start||center||flex-end||strech||space-between||spacearound||
 
 6.transform-origin:center center;
 
+
 ~~~
 
 ### 26.3D属性
@@ -478,6 +500,7 @@ perspective-origin:50%(平视) 50%（俯视）
 transform-style:preserve-3d;/*保持3D变形*/
 
 /*注意：这几个属性设置给父元素,那么其子元素才会有3D变换的效果*/
+
 ~~~
 
 ### 27.css3新增的过渡动画
@@ -501,6 +524,7 @@ transform-style:preserve-3d;/*保持3D变形*/
 
 /*5.复合写法*/
 	transition:过渡属性 过渡时长 过渡速度 过渡延迟;
+
 
 ~~~
 
@@ -559,6 +583,7 @@ transform-style:preserve-3d;/*保持3D变形*/
 
     8.关键帧动画的播放状态
     	animation-play-state:running(继续执行,默认值是播放)|paused(停止执行);
+
 ~~~
 
 ### 29.关键帧动画和过渡动画的区别
@@ -570,6 +595,7 @@ transform-style:preserve-3d;/*保持3D变形*/
 2.动画定义的方式不同
     过渡动画使用transtion属性来实现；关键帧动画使用animation属性和@keyframes关键字来实
     现
+
 ~~~
 
 ### 30.H5新增的标签
@@ -640,6 +666,7 @@ transform-style:preserve-3d;/*保持3D变形*/
 
     4.画布标签
 		<canvas><canvas>
+
 ~~~
 
 ### 31.H5新增的input属性
@@ -653,6 +680,7 @@ transform-style:preserve-3d;/*保持3D变形*/
 
 3.表单只读属性
 	<input readonly>
+
 
 ~~~
 
@@ -700,6 +728,7 @@ transform-style:preserve-3d;/*保持3D变形*/
 
     9.文件
     	<input type="file">
+
 
 ~~~
 
@@ -773,6 +802,7 @@ transform-style:preserve-3d;/*保持3D变形*/
         }
       }
 
+
 ~~~
 
 ### 34.音频标签
@@ -816,6 +846,7 @@ transform-style:preserve-3d;/*保持3D变形*/
         <source src="不同格式的音频">
         ...
     </audio>
+
 ~~~
 
 ### 35.视频标签
@@ -860,6 +891,7 @@ transform-style:preserve-3d;/*保持3D变形*/
         <source src="视频格式3">
         ...
     </video>	
+
 ~~~
 
 ### 36.touch（触摸）事件
@@ -898,6 +930,7 @@ transform-style:preserve-3d;/*保持3D变形*/
 
      e.touches[0].screenX 触摸点到电脑屏幕的水平距离
      e.touches[0].screenY 触摸点到电脑屏幕的垂直距离
+
 ~~~
 
 ### 37.本地存储
@@ -971,6 +1004,7 @@ transform-style:preserve-3d;/*保持3D变形*/
 
         document.cookie = 'userInfo=username=李四&userpass=456;expires='
         +newDate(nextTime).toUTCString();
+
 ~~~
 
 ### 38.canvas画布
@@ -1101,6 +1135,7 @@ transform-style:preserve-3d;/*保持3D变形*/
 ​            
 		清空矩形区域内的绘制内容(以矩形的形式来清空绘制的内容)
 			ctx.clearRect(x,y,width,height)
+
 ~~~
 
 
