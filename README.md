@@ -250,7 +250,7 @@ align-content:flex-start||center||flex-end||strech||space-between||spacearound||
 
 ~~~ css
 1.属性选择器
-	p[class]
+    p[class]
     p[class="active"]
     p[class^='a']
     p[class$='e']
